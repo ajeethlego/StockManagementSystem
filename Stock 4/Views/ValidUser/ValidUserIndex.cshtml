@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Stock4.Models.StockList>
+
+@{
+    ViewData["Title"] = "ValidUserIndex";
+}
+
+<h1>ValidUserIndex</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StockName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StockName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StockPrice)
+                </td>
+                <td>
+                    <a asp-controller="ValidUser" asp-action="VUStockDetails" asp-route-id="@item.StockId">Details</a> |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

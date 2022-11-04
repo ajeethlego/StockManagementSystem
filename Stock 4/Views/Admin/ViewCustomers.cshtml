@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Stock4.Models.AuthorizedUser>
+
+@{
+    ViewData["Title"] = "ViewCustomers";
+}
+
+<h1>ViewCustomers</h1>
+
+<p>
+    
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PanNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IncomePerAnum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmploymentType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pincode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PanNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IncomePerAnum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmploymentType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CityName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pincode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmailId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.UserId">Details</a> |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

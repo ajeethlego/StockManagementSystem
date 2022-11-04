@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Stock4.Models.UserWatchlist1>
+
+@{
+    ViewData["Title"] = "ValidUserHomePage";
+}
+
+<h1>Welcome @ViewBag.UserId</h1>
+
+<p>
+    <a asp-action="ValidUserIndex">List of stocks</a>
+    <a asp-controller="UserWatchlist1" asp-action="Index">Watchlist</a>
+</p>
