@@ -24,6 +24,8 @@ namespace Stock_4.Controllers
             AuthorizedUser result = (from i in _db.authorizedUsers
                                      where i.EmailId == authorizedUser.EmailId && i.Password==authorizedUser.Password
                                      select i).FirstOrDefault();
+
+            
             if (result == null)
             {
                 ModelState.AddModelError("Error","Email Id or Password is Wrong.");
@@ -33,6 +35,7 @@ namespace Stock_4.Controllers
             {
                 int UserId = result.UserId;
                 HttpContext.Session.SetInt32("UserId", UserId);
+                
                 return RedirectToAction("ValidUserHomePage", "ValidUser");
             }
             

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Stock4.Models.AuthorizedUser>
+@using Stock4.Models
+
+@{
+    ViewData["Title"] = "FundIndex";
+}
+
+<h1>FundIndex</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AvailableFund)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) 
+{
+    @if(item.UserId == ViewBag.UserId)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvailableFund)
+                
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        
+    }
+        
+}
+    </tbody>
+</table>
+<div>
+    @using (Html.BeginForm("ToAddFunds","Fund"))
+    {
+        <input type="float" name="amount"/><br />
+        
+        <br />
+        <input class="btn btn-primary" type="submit" value="Add Funds">
+
+    }
+
+</div>
+
+
+
+
+
+   
+

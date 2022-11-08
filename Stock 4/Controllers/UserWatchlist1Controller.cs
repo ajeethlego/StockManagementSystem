@@ -32,8 +32,7 @@ namespace Stock4.Controllers
             ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
             if (ViewBag.UserId != null)
             {
-                //var x = _UserManager.GetUserId(HttpContext.User);
-                //int userId = Convert.ToInt32(x);
+                
                 var userId=ViewBag.Userid;
 
                 var watchlists = _userWatchlist1Repository.GetUserWatchlist1(userId);

@@ -24,6 +24,20 @@ namespace Stock4.Controllers
         {
             return View(await _context.authorizedUsers.ToListAsync());
         }
+        [HttpGet]
+        public async Task<IActionResult> ViewCustomers(string Usersearch)
+        {
+            ViewData["GetUserData"]=Usersearch;
+            var Userquery=from x in _context.authorizedUsers select x;
+            if (!String.IsNullOrEmpty(Usersearch))
+            {
+                Userquery = Userquery.Where(x => x.UserName.Contains(Usersearch)
+                || x.EmailId.Contains(Usersearch)
+                || x.CityName.Contains(Usersearch)
+                || x.PanNumber.Contains(Usersearch));
+            }
+            return View(await Userquery.AsNoTracking().ToListAsync());
+        }
 
         // GET: Admin
         public async Task<IActionResult> Index()
