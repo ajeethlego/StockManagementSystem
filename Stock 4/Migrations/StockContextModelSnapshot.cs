@@ -44,7 +44,7 @@ namespace Stock_4.Migrations
 
                     b.HasKey("AdminId");
 
-                    b.ToTable("adminDetails");
+                    b.ToTable("adminDetails", (string)null);
                 });
 
             modelBuilder.Entity("Stock4.Models.AuthorizedUser", b =>
@@ -93,7 +93,7 @@ namespace Stock_4.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("authorizedUsers");
+                    b.ToTable("authorizedUsers", (string)null);
                 });
 
             modelBuilder.Entity("Stock4.Models.StockList", b =>
@@ -113,7 +113,7 @@ namespace Stock_4.Migrations
 
                     b.HasKey("StockId");
 
-                    b.ToTable("stockLists");
+                    b.ToTable("stockLists", (string)null);
                 });
 
             modelBuilder.Entity("Stock4.Models.UserWatchlist1", b =>
@@ -136,7 +136,7 @@ namespace Stock_4.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserWatchlist1");
+                    b.ToTable("UserWatchlist1", (string)null);
                 });
 
             modelBuilder.Entity("Stock4.Models.UserWatchlist1", b =>

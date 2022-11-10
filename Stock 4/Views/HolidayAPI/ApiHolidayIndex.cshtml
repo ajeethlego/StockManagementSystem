@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Stock_4.Models.API_HolidayLocal>
+
+@{
+    ViewData["Title"] = "ApiHolidayIndex";
+}
+
+<h1>Holiday Index</h1>
+
+<p>
+    <a asp-action="ApiHolidayCreate">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Occasion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Occasion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                    <a asp-action="ApiHolidayEdit" asp-route-id="@item.Id">Edit</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

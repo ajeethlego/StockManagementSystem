@@ -1,7 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using javax.swing.@event;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Stock_4.Models;
 using Stock4.DataT;
+using Newtonsoft.Json;
+using System.Net.Http;
 
 namespace Stock4.Controllers
 {
@@ -14,7 +18,6 @@ namespace Stock4.Controllers
         {
             _context = context;
         }
-
 
         public IActionResult ValidUserHomePage()
         {
@@ -51,6 +54,10 @@ namespace Stock4.Controllers
 
             return View(stockList);
         }
+
+        
+
+
 
     }
 }

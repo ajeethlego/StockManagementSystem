@@ -14,6 +14,7 @@ namespace Stock4.DataT
         public DbSet<AdminDetails> adminDetails { get; set; }
         public DbSet<AuthorizedUser> authorizedUsers { get; set; }
         public DbSet<UserWatchlist1> UserWatchlist1 { get; set; }
+        //public DbSet<API_HolidayLocal> aPI_HolidayLocals { get; set; }
         
 
 
@@ -40,5 +41,11 @@ namespace Stock4.DataT
 
 
         }
+        //public DbSet<API_HolidayLocal> aPI_HolidayLocals { get; set; }
+        
+
+
+        
+        public DbSet<Stock_4.Models.API_HolidayLocal> API_HolidayLocal { get; set; }
     }
 }
