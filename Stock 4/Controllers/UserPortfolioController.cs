@@ -20,14 +20,9 @@ namespace Stock_4.Controllers
             {
                 int userId = ViewBag.UserId;
 
-                //List<UserPortfolio> result = (from i in _context.userPortfolios.Include(x => x.Stock)
-                //                     where i.UserId == userId
-                //                     select i).ToList();
-                //return View(result);
-
                 var uplist = (from od in _context.userPortfolios
                                 join a in _context.stockLists
-                                on od.Stock.StockId equals a.StockId
+                                on od.Stock.StockId equals a.StockId where od.UserId == userId
                                 select new UserPortfolio
                                 {
 
