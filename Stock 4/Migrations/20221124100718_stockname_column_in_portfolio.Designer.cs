@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Stock4.DataT;
 
@@ -11,9 +12,10 @@ using Stock4.DataT;
 namespace Stock_4.Migrations
 {
     [DbContext(typeof(StockContext))]
-    partial class StockContextModelSnapshot : ModelSnapshot
+    [Migration("20221124100718_stockname_column_in_portfolio")]
+    partial class stockname_column_in_portfolio
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,9 +67,6 @@ namespace Stock_4.Migrations
                         .HasColumnType("real");
 
                     b.Property<float>("CurrentPriceTotal")
-                        .HasColumnType("real");
-
-                    b.Property<float>("ProfOrLoss")
                         .HasColumnType("real");
 
                     b.Property<int>("Qty")

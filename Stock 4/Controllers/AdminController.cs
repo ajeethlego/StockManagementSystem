@@ -114,7 +114,7 @@ namespace Stock4.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            else
             {
                 try
                 {

@@ -3,12 +3,6 @@
 @using Stock4.Controllers
 @model Stock4.Models.StockList
 
-
-
-  
-
-
-
 @{
     ViewData["Title"] = "VUStockDetails";
 }
@@ -43,6 +37,21 @@
         <input type="submit" value="Add to Watchlist" class="btn btn-primary pull-right" /> |
         
     </form>
+</div>
+<br />
+<br />
+<div>
+    @using (Html.BeginForm("BuyStock", "UserPortfolio"))
+    {
+        <input type="number" name="BuyQty" />
+
+        <br />
+        <input type="hidden" id="StockId" name="StockId" value="@Model.StockId" />
+        <input type="hidden" id="StockPrice" name="StockPrice" value="@Model.StockPrice" />
+        <br />
+        <br />
+        <input class="btn btn-primary" type="submit" value="BUY">
+    }
 </div>
 
 

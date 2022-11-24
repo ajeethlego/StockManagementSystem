@@ -10,7 +10,7 @@ namespace Stock_4.Models
         public int Id { get; set; }
         public string Occasion { get; set; }
         [Column(TypeName = "Date")]
-        public DateTime Date { get; set; }
+        public DateTime Date { get; set; } 
 
     }
 

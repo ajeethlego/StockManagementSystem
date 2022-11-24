@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Stock4.DataT;
 
@@ -11,9 +12,10 @@ using Stock4.DataT;
 namespace Stock_4.Migrations
 {
     [DbContext(typeof(StockContext))]
-    partial class StockContextModelSnapshot : ModelSnapshot
+    [Migration("20221115055003_Added_UserportfolioTable_with_FK")]
+    partial class Added_UserportfolioTable_with_FK
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,30 +57,23 @@ namespace Stock_4.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<float>("BoughtAt")
-                        .HasColumnType("real");
+                    b.Property<int>("BoughtAt")
+                        .HasColumnType("int");
 
-                    b.Property<float>("BoughtAtTotal")
-                        .HasColumnType("real");
+                    b.Property<long>("BoughtAtTotal")
+                        .HasColumnType("bigint");
 
-                    b.Property<float>("CurrentPrice")
-                        .HasColumnType("real");
+                    b.Property<int>("CurrentPrice")
+                        .HasColumnType("int");
 
-                    b.Property<float>("CurrentPriceTotal")
-                        .HasColumnType("real");
-
-                    b.Property<float>("ProfOrLoss")
-                        .HasColumnType("real");
+                    b.Property<long>("CurrentPriceTotal")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("Qty")
                         .HasColumnType("int");
 
                     b.Property<int>("StockId")
                         .HasColumnType("int");
-
-                    b.Property<string>("StockName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");

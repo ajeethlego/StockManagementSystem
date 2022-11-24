@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Stock_4.Models.UserPortfolio>
+
+@{
+    ViewData["Title"] = "UserPortfolioIndex";
+}
+
+<h1>UserPortfolioIndex</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Stock Name</th>
+            <th>Quantity</th>
+            <th>Bought Price</th>
+            <th>Current Price</th>
+            <th>Bought Price Total</th>
+            <th>Current Price Total</th>
+            <th>Profit or Loss</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StockName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Qty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BoughtAt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CurrentPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BoughtAtTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CurrentPriceTotal)
+                </td>
+               
+                <td>
+                    @{ if (@item.ProfOrLoss < 0)
+                            {
+                                <span style="color:red">@Html.DisplayFor(modelItem => item.ProfOrLoss)</span>
+                            }
+                        if (@item.ProfOrLoss > 0)
+                            {
+                                <span style="color:green">@Html.DisplayFor(modelItem => item.ProfOrLoss)</span>
+                            }
+                       else
+                            {
+                                <span style="color:darkgray">@Html.DisplayFor(modelItem => item.ProfOrLoss)</span>
+                            }
+                    }
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-controller="ValidUser" asp-action="ValidUserIndex">Back to List of Stocks</a>
+</div>
+<div>
+    <a asp-controller="UserPortfolio" asp-action="PortfolioRefresh">Refresh stock Price</a>
+</div>

@@ -12,7 +12,5 @@ namespace Stock4.Models
         public int UserId { get; set; }
         public AuthorizedUser User { get; set; }
 
-
-
     }
 }

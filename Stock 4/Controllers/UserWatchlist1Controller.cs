@@ -32,7 +32,6 @@ namespace Stock4.Controllers
             ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
             if (ViewBag.UserId != null)
             {
-                
                 var userId=ViewBag.Userid;
 
                 var watchlists = _userWatchlist1Repository.GetUserWatchlist1(userId);
@@ -40,19 +39,12 @@ namespace Stock4.Controllers
                 return View(watchlists);
             }
             return View();
-          
-
         }
-
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult New(int StockId)
         {
-
-            //var x = _UserManager.GetUserId(HttpContext.User);
-            //int userId = Convert.ToInt32(x);
             ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
             var userId = ViewBag.Userid;
 
@@ -62,13 +54,9 @@ namespace Stock4.Controllers
                 UserId = userId
             };
             _userWatchlist1Repository.Create(Watchlist1);
-
             //_clientNotification
             // .AddSweetNotification("Success", "the stock has been added to Watchlist 1", NotificationType.success);
-
             return RedirectToAction("Index");
-
-
         }
 
         

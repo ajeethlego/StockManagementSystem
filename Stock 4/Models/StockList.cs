@@ -11,9 +11,8 @@ namespace Stock4.Models
         [Required]
         public string StockName { get; set; }
         public float StockPrice { get; set; }
-        //public AuthorizedUser User { get; set; }
-
         public List<UserWatchlist1> UserWatchlist1 { get; set; }
+        public List<UserPortfolio> userPortfolios { get; set; }
 
     }
 }
