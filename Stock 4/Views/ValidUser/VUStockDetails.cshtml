@@ -8,6 +8,8 @@
 }
 
 <h1>VUStockDetails</h1>
+<h3>Hi @ViewBag.UserName</h3>
+
 
 <div>
     <h4>StockList</h4>
@@ -29,7 +31,8 @@
 </div>
 
 
-
+@if(ViewBag.WatchlistBtn==null)
+{
 <div>
     <form asp-controller="UserWatchlist1" 
             asp-action="New">
@@ -38,24 +41,38 @@
         
     </form>
 </div>
+}
+
 <br />
-<br />
-<div>
-    @using (Html.BeginForm("BuyStock", "UserPortfolio"))
-    {
-        <input type="number" name="BuyQty" />
 
-        <br />
-        <input type="hidden" id="StockId" name="StockId" value="@Model.StockId" />
-        <input type="hidden" id="StockPrice" name="StockPrice" value="@Model.StockPrice" />
-        <br />
-        <br />
-        <input class="btn btn-primary" type="submit" value="BUY">
-    }
-</div>
-
-
-
+@if (ViewBag.portBtn == null)
+{
+    <div>
+        @using (Html.BeginForm("BuyStock", "UserPortfolio"))
+        {
+            <input type="number" name="BuyQty" />
+            <input type="hidden" id="StockId" name="StockId" value="@Model.StockId" />
+            <input type="hidden" id="StockPrice" name="StockPrice" value="@Model.StockPrice" />
+            <input type="hidden" id="StockName" name="StockName" value="@Model.StockName" />
+            <br />
+            <input class="btn btn-primary" type="submit" value="BUY">
+        }
+    </div>
+}
+else
+{
+    <div>
+        @using (Html.BeginForm("AddStock", "UserPortfolio"))
+        {
+            <input type="number" name="BuyQty" />
+            <input type="hidden" id="StockId" name="StockId" value="@Model.StockId" />
+            <input type="hidden" id="StockPrice" name="StockPrice" value="@Model.StockPrice" />
+            <input type="hidden" id="StockName" name="StockName" value="@Model.StockName" />
+            <br />
+            <input class="btn btn-outline-info" type="submit" value="Add stock1">
+        }
+    </div>
+}
 <div>
     <a asp-action="ValidUserIndex">Back to List of Stocks</a>
 </div>
@@ -63,9 +80,3 @@
 
 
 
-@*@foreach (var item in UserWatchlist1)
-{
-    if(item.UserId==ViewBag.UserId && item.==
-    {
-
-    }*@

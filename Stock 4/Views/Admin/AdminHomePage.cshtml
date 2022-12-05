@@ -2,9 +2,11 @@
     ViewData["Title"] = "AdminHomePage";
 }
 
-<h1>AdminHomePage</h1>
+<h1>Welcome Admin</h1>
 <p>
     <a asp-action="Index">Stock List</a>
+    <br />
     <a asp-action="ViewCustomers">View Customers</a>
-
+    <br />
+    <a asp-controller="HolidayAPI" asp-action="ApiHolidayIndex">Holidays</a>
 </p>

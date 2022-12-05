@@ -31,7 +31,14 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                    <a asp-action="ApiHolidayEdit" asp-route-id="@item.Id">Edit</a> 
+                    <a asp-action="ApiHolidayEdit" asp-route-id="@item.Id">Edit</a>
+                   <a asp-action="ApiHolidayDelete" asp-route-id="@item.Id">Delete</a>
+                    @*@using (Html.BeginForm("ApiHolidayDelete", "HolidayAPI", new { id=item.Id},
+                    FormMethod.Post, new { onsubmit ="return confirm('You sure want to delete this item?');"}))
+                    {
+                        @Html.AntiForgeryToken();
+                        <input type="submit" value="Delete"/>
+                    }*@
             </td>
         </tr>
 }

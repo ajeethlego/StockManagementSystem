@@ -2,17 +2,17 @@
 
 @{
     ViewData["Title"] = "ValidUserHomePage";
-   
-
 }
-
-<h1>Welcome @ViewBag.UserId</h1>
-
-
+<h1>Welcome @ViewBag.UserName</h1>
 
 <p>
     <a asp-action="ValidUserIndex">List of stocks</a>
+    <br />
     <a asp-controller="UserWatchlist1" asp-action="Index">Watchlist</a>
+    <br />
     <a asp-controller="Fund" asp-action="FundIndex" asp-route-id="@ViewBag.UserId"> Funds</a>
+    <br />
     <a asp-controller="UserPortfolio" asp-action="UserPortfolioIndex">Portfolio</a>
+    <br />
+    <a asp-controller="HolidayAPI_User" asp-action="ApiHolidayUserIndex">List of Holidays</a>
 </p>

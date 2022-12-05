@@ -4,7 +4,7 @@
     ViewData["Title"] = "UserPortfolioIndex";
 }
 
-<h1>UserPortfolioIndex</h1>
+<h1>Your Holdings</h1>
 
 <table class="table">
     <thead>
@@ -15,7 +15,7 @@
             <th>Current Price</th>
             <th>Bought Price Total</th>
             <th>Current Price Total</th>
-            <th>Profit or Loss</th>
+            <th>Profit & Loss</th>
         </tr>
     </thead>
     <tbody>
@@ -46,16 +46,26 @@
                             {
                                 <span style="color:red">@Html.DisplayFor(modelItem => item.ProfOrLoss)</span>
                             }
-                        if (@item.ProfOrLoss > 0)
+                        else if (@item.ProfOrLoss > 0)
                             {
                                 <span style="color:green">@Html.DisplayFor(modelItem => item.ProfOrLoss)</span>
                             }
-                       else
+                        else
                             {
                                 <span style="color:darkgray">@Html.DisplayFor(modelItem => item.ProfOrLoss)</span>
                             }
                     }
                     
+                </td>
+                <td>
+                    <div>
+                        @using (Html.BeginForm("SellAllStock", "UserPortfolio"))
+                        {
+                            <input type="hidden" id="Id" name="Id" value="@item.Id" />
+                            <input type="hidden" id="CurrentPrice" name="CurrentPrice" value="@item.CurrentPrice" />
+                            <input class="btn btn-danger btn-sm" type="submit" value="Sell All">
+                        }
+                    </div>
                 </td>
             </tr>
         }
@@ -63,7 +73,4 @@
 </table>
 <div>
     <a asp-controller="ValidUser" asp-action="ValidUserIndex">Back to List of Stocks</a>
-</div>
-<div>
-    <a asp-controller="UserPortfolio" asp-action="PortfolioRefresh">Refresh stock Price</a>
 </div>

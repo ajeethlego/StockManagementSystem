@@ -2,23 +2,18 @@
 
 @{
     ViewData["Title"] = "FundIndex";
-   
 }
-
-<h1>FundIndex</h1>
-
-
-
 <div>
-    <h4>AuthorizedUser</h4>
     <hr />
     <dl class="row">
+        
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AvailableFund)
+            <h4>Available Funds</h4>
+            @*<h4>@Html.DisplayNameFor(model => model.AvailableFund)</h4>*@
         </dt>
-
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AvailableFund)
+       
+        <dd class = "col-sm-2">
+            <h4>@Html.DisplayFor(model => model.AvailableFund)</h4>
         </dd>
     </dl>
 </div>
@@ -26,22 +21,19 @@
 <div>
     @using (Html.BeginForm("ToAddFunds", "Fund"))
     {
-        <input type="number" name="amount" /><br />
+        <input type="number" name="amount" />
+        <br />
         <input type="hidden" id="AvailableFund" name="AvailableFund" value="@Model.AvailableFund" />
-        <br />
-        <br />
-        <input class="btn btn-primary" type="submit" value="Add Fund">
+        <input class="btn btn-primary btn-sm" type="submit" value="Add Fund">
     }
 </div>
+<br />
 <div>
     @using (Html.BeginForm("ToRemoveFunds", "Fund"))
     {
         <input type="number" name="amount" />
-
         <br />
         <input type="hidden" id="AvailableFund" name="AvailableFund" value="@Model.AvailableFund" />
-        <br />
-        <br />
-        <input class="btn btn-primary" type="submit" value="Remove Fund">
+        <input class="btn btn-primary btn-sm" type="submit" value="Remove Fund">
     }
 </div>

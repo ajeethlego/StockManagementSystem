@@ -3,10 +3,6 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
-
-
 <table class="table">
     <thead>
         <tr>
@@ -30,15 +26,10 @@
                     @Html.DisplayFor(modelItem => item.Stock.StockPrice)
                 </td>
                 <td>
-                    
-                    @*<a asp-controller="ValidUser" asp-action="VUStockDetails" asp-route-id="@item.Id">Details</a> |*@
-                   @*<a asp-controller="UserWatchlist1" asp-action="Remove" asp-route-id="@item.Id">Remove from watchlist</a>*@
-
                     <div>
                         <form asp-action="Remove"
                             asp-controller="UserWatchlist1"
                             asp-route-Id="@item.Id">
-                            
                             <input type="submit" value="Remove from Watchlist" class="btn btn-danger" /> |
                         </form>
                     </div>
@@ -47,7 +38,6 @@
         }
     </tbody>
 </table>
-@*<input type="hidden" asp-for="@item.Id" />*@
 <div>
     <a asp-controller="ValidUser" asp-action="ValidUserIndex">Back to List of Stocks</a>
 </div>

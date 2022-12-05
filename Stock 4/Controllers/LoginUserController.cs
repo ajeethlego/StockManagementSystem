@@ -35,7 +35,10 @@ namespace Stock_4.Controllers
             {
                 int UserId = result.UserId;
                 HttpContext.Session.SetInt32("UserId", UserId);
-                
+
+                string UserName = result.UserName;
+                HttpContext.Session.SetString("UserName", UserName);
+
                 return RedirectToAction("ValidUserHomePage", "ValidUser");
             }
             

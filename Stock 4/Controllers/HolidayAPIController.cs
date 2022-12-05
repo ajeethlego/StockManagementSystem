@@ -74,5 +74,31 @@ namespace Stock_4.Controllers
             return View("ApiHolidayCreate",Edititem);
         }
 
+        public ActionResult ApiHolidayDelete(int id)
+        {
+            //API_HolidayLocal Deleteitem = new API_HolidayLocal();
+            //HttpResponseMessage response = client.DeleteAsync(client.BaseAddress + "/holidays" + id).Result;
+
+            //if (response.IsSuccessStatusCode)
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:44341/api");
+
+                //HTTP DELETE
+                var deleteTask = client.DeleteAsync(client.BaseAddress + "/holidays/" + id.ToString());
+                deleteTask.Wait();
+
+                var result = deleteTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("ApiHolidayIndex");
+                }
+            }
+
+            return RedirectToAction("ApiHolidayIndex");
+        }
+
+
     }
 }

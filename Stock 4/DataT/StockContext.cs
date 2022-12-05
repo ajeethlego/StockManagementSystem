@@ -54,6 +54,14 @@ namespace Stock4.DataT
 
 
         }
+        //public DbSet<API_HolidayLocal> aPI_HolidayLocals { get; set; }
+
+
+        
+
+
+        
+        public DbSet<Stock_4.Models.API_HolidayLocal> API_HolidayLocal { get; set; }
         
     }
 }

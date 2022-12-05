@@ -6,6 +6,7 @@ using Stock_4.Models;
 using Stock4.DataT;
 using Newtonsoft.Json;
 using System.Net.Http;
+using Microsoft.AspNetCore.Http;
 
 namespace Stock4.Controllers
 {
@@ -40,6 +41,33 @@ namespace Stock4.Controllers
 
         public async Task<IActionResult> VUStockDetails(int? id)
         {
+            ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
+
+            int userid =ViewBag.UserId;
+            ViewBag.WatchlistBtn = null;
+
+            foreach (var item in _context.UserWatchlist1)
+            {
+                if(item.UserId== userid && item.StockId == id)
+                {
+                    int WatchlistBtn = item.UserId;
+                    HttpContext.Session.SetInt32("WatchlistBtn", WatchlistBtn);
+                    ViewBag.WatchlistBtn = HttpContext.Session.GetInt32("WatchlistBtn");
+                }
+            }
+
+            foreach (var item in _context.userPortfolios)
+            {
+                if (item.UserId == userid && item.StockId == id)
+                {
+                    int portBtn = item.UserId;
+                    HttpContext.Session.SetInt32("portBtn", portBtn);
+                    ViewBag.portBtn = HttpContext.Session.GetInt32("portBtn");
+                }
+            }
+
+
             if (id == null || _context.stockLists == null)
             {
                 return NotFound();
@@ -54,10 +82,5 @@ namespace Stock4.Controllers
 
             return View(stockList);
         }
-
-        
-
-
-
     }
 }
