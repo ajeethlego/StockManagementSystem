@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Stock_4.Models;
 using System.Text;
 
 namespace Stock_4.Controllers
 {
+    
     public class HolidayAPIController : Controller
     {
         Uri ApiHolidayAddress = new Uri("https://localhost:44341/api");

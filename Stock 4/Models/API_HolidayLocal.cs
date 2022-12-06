@@ -9,9 +9,10 @@ namespace Stock_4.Models
         [Key]
         public int Id { get; set; }
         public string Occasion { get; set; }
+
+        [DataType(DataType.Date)]
         [Column(TypeName = "Date")]
         public DateTime Date { get; set; } 
-
     }
 
 }

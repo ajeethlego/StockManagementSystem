@@ -5,9 +5,11 @@
 
 @{
     ViewData["Title"] = "VUStockDetails";
+    Layout = "_logoutuser";
+
 }
 
-<h1>VUStockDetails</h1>
+<h1>Details</h1>
 <h3>Hi @ViewBag.UserName</h3>
 
 
@@ -37,12 +39,10 @@
     <form asp-controller="UserWatchlist1" 
             asp-action="New">
         <input type="hidden" asp-for="@Model.StockId" />
-        <input type="submit" value="Add to Watchlist" class="btn btn-primary pull-right" /> |
-        
+        <input type="submit" value="Add to Watchlist" class="btn btn-warning" /> 
     </form>
 </div>
 }
-
 <br />
 
 @if (ViewBag.portBtn == null)
@@ -69,12 +69,12 @@ else
             <input type="hidden" id="StockPrice" name="StockPrice" value="@Model.StockPrice" />
             <input type="hidden" id="StockName" name="StockName" value="@Model.StockName" />
             <br />
-            <input class="btn btn-outline-info" type="submit" value="Add stock1">
+            <input class="btn btn-outline-success" type="submit" value="Add stock1">
         }
     </div>
 }
 <div>
-    <a asp-action="ValidUserIndex">Back to List of Stocks</a>
+    <a asp-action="ValidUserIndex" class="btn btn-secondary" role="button">Back to Stocks</a>
 </div>
 
 

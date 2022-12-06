@@ -13,14 +13,21 @@ var builder = WebApplication.CreateBuilder(args);
 //            options.LoginPath = "/LoginUser/UserToLogin";
 //            options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
 //        });
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+
+
+    builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme,
         options =>
         {
-            options.LoginPath = new PathString("/LoginUser/UserToLogin");
-            //options.AccessDeniedPath = new PathString("/Home/Index");
+            options.LoginPath = new PathString("/Admin/AdminHomePage");
+            options.LoginPath = new PathString("/Home/Index");
+            //options.LoginPath = new PathString("/LoginUser/UserToLogin");
+
+            options.AccessDeniedPath = new PathString("/Home/Index");
         });
 
+//builder.Services.AddAuthorization(options => { options.AddPolicy("AdminRole", policy => policy.RequireRole("Admin")); });
+//builder.Services.AddAuthorization(options => { options.AddPolicy("UserRole", policy => policy.RequireRole("User")); });
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 

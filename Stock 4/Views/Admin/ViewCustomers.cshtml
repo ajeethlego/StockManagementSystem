@@ -2,9 +2,11 @@
 
 @{
     ViewData["Title"] = "ViewCustomers";
+    Layout = "_LogoutLayout";
+
 }
 
-<h1>ViewCustomers</h1>
+<h1>Customers</h1>
 
 <form method="get" asp-action="ViewCustomers">
     <p>
@@ -50,7 +52,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Password)
             </th>
-            <th></th>
+           
         </tr>
     </thead>
     <tbody>
@@ -84,9 +86,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Password)
                 </td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.UserId">Details</a> |
-                </td>
+                
             </tr>
         }
     </tbody>

@@ -3,6 +3,7 @@ using java.lang;
 using java.rmi.server;
 using javax.swing;
 using jdk.@internal.org.objectweb.asm.tree;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Stock4.DataT;
@@ -10,6 +11,7 @@ using Stock4.Models;
 
 namespace Stock_4.Controllers
 {
+    
     public class FundController : Controller
     {
         private StockContext _context;

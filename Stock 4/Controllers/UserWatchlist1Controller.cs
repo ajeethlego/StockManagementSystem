@@ -1,17 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using ClientNotifications;
-using Microsoft.AspNetCore.SignalR;
-using Microsoft.Data.SqlClient;
-using static ClientNotifications.Helpers.NotificationHelper;
+﻿using Microsoft.AspNetCore.Mvc;
 using Stock4.Models;
 using Stock4.Repositories;
 using Microsoft.AspNetCore.Authorization;
-using com.sun.xml.@internal.bind.v2.model.core;
 
 namespace Stock4.Controllers
 {
-    
     public class UserWatchlist1Controller : Controller
     {
         private IUserWatchlist1Repository _userWatchlist1Repository;

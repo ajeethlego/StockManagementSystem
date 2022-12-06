@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Edit";
+    Layout = "_LogoutLayout";
+
 }
 
 <h1>Edit</h1>
@@ -31,7 +33,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-controller="Admin" asp-action="Index" class="btn btn-secondary" role="button">Back</a>
 </div>
 
 @section Scripts {

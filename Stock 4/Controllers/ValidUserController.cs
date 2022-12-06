@@ -1,16 +1,10 @@
-﻿using javax.swing.@event;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Stock_4.Models;
 using Stock4.DataT;
-using Newtonsoft.Json;
-using System.Net.Http;
-using Microsoft.AspNetCore.Http;
 
 namespace Stock4.Controllers
 {
-    
     public class ValidUserController : Controller
     {
         private readonly StockContext _context;
@@ -19,7 +13,6 @@ namespace Stock4.Controllers
         {
             _context = context;
         }
-
         public IActionResult ValidUserHomePage()
         {
             ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
@@ -32,8 +25,6 @@ namespace Stock4.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
-             
-        
         public async Task<IActionResult> ValidUserIndex()
         {
             return View(await _context.stockLists.ToListAsync());

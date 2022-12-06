@@ -2,9 +2,11 @@
 
 @{
     ViewData["Title"] = "ApiHolidayIndex";
+    Layout = "_LogoutLayout";
+
 }
 
-<h1>Holiday Index</h1>
+<h1>Holiday List</h1>
 
 <p>
     <a asp-action="ApiHolidayCreate">Create New</a>
@@ -31,14 +33,8 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                    <a asp-action="ApiHolidayEdit" asp-route-id="@item.Id">Edit</a>
-                   <a asp-action="ApiHolidayDelete" asp-route-id="@item.Id">Delete</a>
-                    @*@using (Html.BeginForm("ApiHolidayDelete", "HolidayAPI", new { id=item.Id},
-                    FormMethod.Post, new { onsubmit ="return confirm('You sure want to delete this item?');"}))
-                    {
-                        @Html.AntiForgeryToken();
-                        <input type="submit" value="Delete"/>
-                    }*@
+                    <a asp-action="ApiHolidayEdit" asp-route-id="@item.Id" class="btn btn-warning" role="button">Edit</a>
+                    <a asp-action="ApiHolidayDelete" asp-route-id="@item.Id" class="btn btn-danger" role="button">Delete</a>
             </td>
         </tr>
 }

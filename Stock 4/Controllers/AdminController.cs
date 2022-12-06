@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Stock4.DataT;
 using Stock4.Models;
 using System.Linq;
+
 
 namespace Stock4.Controllers
 {
@@ -14,12 +16,13 @@ namespace Stock4.Controllers
         {
             _context = context;
         }
-
+        
         public IActionResult AdminHomePage()
         {
             return View();
         }
 
+        
         public async Task<IActionResult> ViewCustomers()
         {
             return View(await _context.authorizedUsers.ToListAsync());
@@ -134,6 +137,7 @@ namespace Stock4.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
             return View(stockList);
         }
 

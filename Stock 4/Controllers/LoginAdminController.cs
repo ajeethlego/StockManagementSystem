@@ -68,7 +68,7 @@ namespace Stock_4.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
-            return RedirectToAction("AdminToLogin");
+            return RedirectToAction("Index","Home");
         }
 
     }

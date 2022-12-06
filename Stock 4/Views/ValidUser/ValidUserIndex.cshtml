@@ -2,9 +2,11 @@
 
 @{
     ViewData["Title"] = "ValidUserIndex";
+    Layout = "_logoutuser";
+
 }
 
-<h1>ValidUserIndex</h1>
+<h1>Stock List</h1>
 
 
 <table class="table">
@@ -30,7 +32,7 @@
                     @Html.DisplayFor(modelItem => item.StockPrice)
                 </td>
                 <td>
-                    <a asp-controller="ValidUser" asp-action="VUStockDetails" asp-route-id="@item.StockId">Details</a> |
+                    <a asp-controller="ValidUser" asp-action="VUStockDetails" asp-route-id="@item.StockId" class="btn btn-info" role="button">Details</a>
                 </td>
             </tr>
         }

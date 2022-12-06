@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "UserPortfolioIndex";
+    Layout = "_logoutuser";
+
 }
 
 <h1>Your Holdings</h1>
@@ -11,9 +13,9 @@
         <tr>
             <th>Stock Name</th>
             <th>Quantity</th>
-            <th>Bought Price</th>
+            <th>Avg Price</th>
             <th>Current Price</th>
-            <th>Bought Price Total</th>
+            <th>Avg Price Total</th>
             <th>Current Price Total</th>
             <th>Profit & Loss</th>
         </tr>
@@ -44,15 +46,15 @@
                 <td>
                     @{ if (@item.ProfOrLoss < 0)
                             {
-                                <span style="color:red">@Html.DisplayFor(modelItem => item.ProfOrLoss)</span>
+                            <span style="color:red"><b>@Html.DisplayFor(modelItem => item.ProfOrLoss)</b></span>
                             }
                         else if (@item.ProfOrLoss > 0)
                             {
-                                <span style="color:green">@Html.DisplayFor(modelItem => item.ProfOrLoss)</span>
+                                <span style="color:mediumseagreen"><b>@Html.DisplayFor(modelItem => item.ProfOrLoss)</b></span>
                             }
                         else
                             {
-                                <span style="color:darkgray">@Html.DisplayFor(modelItem => item.ProfOrLoss)</span>
+                            <span style="color:darkgray"><b>@Html.DisplayFor(modelItem => item.ProfOrLoss)</b></span>
                             }
                     }
                     
@@ -72,5 +74,5 @@
     </tbody>
 </table>
 <div>
-    <a asp-controller="ValidUser" asp-action="ValidUserIndex">Back to List of Stocks</a>
+    <a asp-controller="ValidUser" asp-action="ValidUserIndex" class="btn btn-secondary" role="button">Back to Stocks</a>
 </div>

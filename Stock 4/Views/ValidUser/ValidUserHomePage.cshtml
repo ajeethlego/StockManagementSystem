@@ -2,17 +2,28 @@
 
 @{
     ViewData["Title"] = "ValidUserHomePage";
+    Layout = "_logoutuser";
+
 }
 <h1>Welcome @ViewBag.UserName</h1>
 
-<p>
-    <a asp-action="ValidUserIndex">List of stocks</a>
-    <br />
-    <a asp-controller="UserWatchlist1" asp-action="Index">Watchlist</a>
-    <br />
-    <a asp-controller="Fund" asp-action="FundIndex" asp-route-id="@ViewBag.UserId"> Funds</a>
-    <br />
-    <a asp-controller="UserPortfolio" asp-action="UserPortfolioIndex">Portfolio</a>
-    <br />
-    <a asp-controller="HolidayAPI_User" asp-action="ApiHolidayUserIndex">List of Holidays</a>
-</p>
+<div>
+    <a asp-action="ValidUserIndex" class="btn btn-primary" role="button">List Of Stocks</a>
+</div>
+<br />
+<div>
+    <a asp-controller="UserWatchlist1" asp-action="Index" class="btn btn-primary" role="button">Watchlist</a>
+</div>
+<br />
+<div>
+    <a asp-controller="Fund" asp-action="FundIndex" asp-route-id="@ViewBag.UserId" class="btn btn-primary" role="button">Funds</a>
+</div>
+<br />
+<div>
+    <a asp-controller="UserPortfolio" asp-action="UserPortfolioIndex" class="btn btn-primary" role="button">Portfolio</a>
+</div>
+<br />
+<div>
+    <a asp-controller="HolidayAPI_User" asp-action="ApiHolidayUserIndex" class="btn btn-primary" role="button">List Of Holidays</a>
+</div>
+

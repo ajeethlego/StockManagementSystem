@@ -1,12 +1,19 @@
 ﻿@{
     ViewData["Title"] = "AdminHomePage";
+    Layout = "_LogoutLayout";
 }
 
 <h1>Welcome Admin</h1>
-<p>
-    <a asp-action="Index">Stock List</a>
-    <br />
-    <a asp-action="ViewCustomers">View Customers</a>
-    <br />
-    <a asp-controller="HolidayAPI" asp-action="ApiHolidayIndex">Holidays</a>
-</p>
+
+<div>
+    <a asp-controller="Admin" asp-action="Index" class="btn btn-info" role="button">Stock List</a>
+</div>
+<br />
+<div>
+    <a asp-controller="Admin" asp-action="ViewCustomers" class="btn btn-info" role="button">View Customers</a>
+</div>
+<br />
+<div>
+    <a asp-controller="HolidayAPI" asp-action="ApiHolidayIndex" class="btn btn-info" role="button">List Of Holidays</a>
+</div>
+

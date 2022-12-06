@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Stock_4.Models;
 using Stock4.DataT;
 using Stock4.Models;
@@ -6,6 +7,7 @@ using static com.sun.tools.@internal.xjc.reader.xmlschema.bindinfo.BIConversion;
 
 namespace Stock_4.Controllers
 {
+    
     public class UserPortfolioController : Controller
     {
         private StockContext _context;

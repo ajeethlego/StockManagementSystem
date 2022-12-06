@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Delete";
+    Layout = "_LogoutLayout";
+
 }
 
 <h1>Delete</h1>
@@ -33,7 +35,7 @@
 
     <form asp-action="Delete">
         <input type="hidden" asp-for="StockId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Delete" class="btn btn-danger" /> 
+        <a asp-controller="Admin" asp-action="Index" class="btn btn-secondary" role="button">Back</a>
     </form>
 </div>
