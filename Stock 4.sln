@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolidayAPILocal", "..\HolidayAPILocal\HolidayAPILocal\HolidayAPILocal.csproj", "{B6D53810-A6B0-4B13-BFA8-1A547F0A0193}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalcApiLocal", "..\CalcApiLocal\CalcApiLocal\CalcApiLocal.csproj", "{7AB5ABFC-C62D-4341-A495-A5A157A989C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{B6D53810-A6B0-4B13-BFA8-1A547F0A0193}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6D53810-A6B0-4B13-BFA8-1A547F0A0193}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6D53810-A6B0-4B13-BFA8-1A547F0A0193}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AB5ABFC-C62D-4341-A495-A5A157A989C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AB5ABFC-C62D-4341-A495-A5A157A989C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AB5ABFC-C62D-4341-A495-A5A157A989C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AB5ABFC-C62D-4341-A495-A5A157A989C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -70,6 +70,5 @@ namespace Stock_4.Controllers
             HttpContext.Session.Clear();
             return RedirectToAction("Index","Home");
         }
-
     }
 }
