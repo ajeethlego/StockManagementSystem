@@ -41,7 +41,7 @@ namespace Stock4.Controllers
             ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
             var userId = ViewBag.Userid;
 
-            var Watchlist1 = new UserWatchlist1
+            var Watchlist1 = new UserWatchlist1()
             {
                 StockId = StockId,
                 UserId = userId

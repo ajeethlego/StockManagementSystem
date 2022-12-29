@@ -61,7 +61,7 @@ namespace Stock_4.Controllers
                 client.BaseAddress = new Uri("https://localhost:7291/api");
 
                 //HTTP DELETE
-                var deleteTask = client.DeleteAsync(client.BaseAddress + "/holidays/" + id.ToString());
+                var deleteTask = client.DeleteAsync(client.BaseAddress + "/calc/" + id.ToString());
                 deleteTask.Wait();
 
                 var result = deleteTask.Result;

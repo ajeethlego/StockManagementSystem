@@ -18,7 +18,13 @@ namespace Stock_4.Controllers
 
         public IActionResult UserPortfolioIndex()
         {
+           /* //for testing purpose
+            ViewBag.UserId = 1;*/
+
             ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
+            
+            
+            
             if(ViewBag.UserId != 0 && ViewBag.UserId != null)
             {
                 int userId = ViewBag.UserId;
@@ -48,7 +54,17 @@ namespace Stock_4.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult BuyStock(int StockId,int BuyQty,float StockPrice,string StockName)
         {
+         /*   //for testing purpose
+            ViewBag.UserId = 1;*/
+
+
+
+
+
             ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
+            
+            
+            
             var userId = ViewBag.Userid;
 
             AuthorizedUser AvFund =new AuthorizedUser();
@@ -142,7 +158,13 @@ namespace Stock_4.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult SellAllStock(int Id,float CurrentPrice )
         {
+           /*    //for testing purpose
+            ViewBag.UserId = 1;*/
+
+
             ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
+            
+            
             var userId = ViewBag.Userid;
 
             AuthorizedUser AvFund = new AuthorizedUser();

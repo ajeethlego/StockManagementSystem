@@ -110,7 +110,7 @@ namespace Stock4.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("StockId,StockName,StockPrice")] StockList stockList)
+        public async Task<IActionResult> tempaddnameEdit(int id, [Bind("StockId,StockName,StockPrice")] StockList stockList)
         {
             if (id != stockList.StockId)
             {
@@ -138,7 +138,7 @@ namespace Stock4.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            return View(stockList);
+            //return View(stockList);
         }
 
         // GET: Admin/Delete/5

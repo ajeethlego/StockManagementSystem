@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Stock4.DataT;
 using Stock4.Models;
 
@@ -14,24 +15,26 @@ namespace Stock4.Repositories
         }
         public void Create(UserWatchlist1 userWatchlist1)
         {
-            _context.UserWatchlist1.Add(userWatchlist1);
+            _context.userWatchlist1s.Add(userWatchlist1);
             _context.SaveChanges();
+
+            
         }
         public List<UserWatchlist1> GetUserWatchlist1(int UserId)
         {
-            return _context.UserWatchlist1
+            return _context.userWatchlist1s
                 .Include(s => s.Stock)
                 .Where(s => s.UserId == UserId)
                 .ToList();
         }
         UserWatchlist1 IUserWatchlist1Repository.GetUserWatchlist1s(int Id)
         {
-            return _context.UserWatchlist1.FirstOrDefault(w => w.Id == Id);
+            return _context.userWatchlist1s.FirstOrDefault(w => w.Id == Id);
         }
 
         public void Remove(UserWatchlist1 userWatchlist1)
         {
-            _context.UserWatchlist1.Remove(userWatchlist1);
+            _context.userWatchlist1s.Remove(userWatchlist1);
             _context.SaveChanges();
         }
 

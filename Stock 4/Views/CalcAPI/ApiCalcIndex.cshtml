@@ -7,7 +7,7 @@
 <h1>ApiCalcIndex</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="ApiCalcCreate">Calculate</a>
 </p>
 <table class="table">
     <thead>
@@ -49,9 +49,7 @@
                 @Html.DisplayFor(modelItem => item.TotalPrice)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-controller="CalcAPI" asp-action="ApiCalcDelete" asp-route-id="@item.Id">aDelete</a>
             </td>
         </tr>
 }

@@ -13,7 +13,7 @@ namespace Stock4.DataT
         
         public DbSet<AdminDetails> adminDetails { get; set; }
         public DbSet<AuthorizedUser> authorizedUsers { get; set; }
-        public DbSet<UserWatchlist1> UserWatchlist1 { get; set; }
+        public DbSet<UserWatchlist1> userWatchlist1s { get; set; }
         public DbSet<UserPortfolio> userPortfolios { get; set; }
         //public DbSet<API_HolidayLocal> aPI_HolidayLocals { get; set; }
 

@@ -15,6 +15,9 @@ namespace Stock4.Controllers
         }
         public IActionResult ValidUserHomePage()
         {
+            /*//for testing purpose
+            ViewBag.UserId = 1;*/
+
             ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
             if (ViewBag.UserId != null)
             {
@@ -32,13 +35,15 @@ namespace Stock4.Controllers
 
         public async Task<IActionResult> VUStockDetails(int? id)
         {
+            //for testing purpose
+
             ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
             ViewBag.UserName = HttpContext.Session.GetString("UserName");
 
             int userid =ViewBag.UserId;
             ViewBag.WatchlistBtn = null;
 
-            foreach (var item in _context.UserWatchlist1)
+            foreach (var item in _context.userWatchlist1s)
             {
                 if(item.UserId== userid && item.StockId == id)
                 {
