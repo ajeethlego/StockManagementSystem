@@ -10,10 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolidayAPILocal", "..\HolidayAPILocal\HolidayAPILocal\HolidayAPILocal.csproj", "{B6D53810-A6B0-4B13-BFA8-1A547F0A0193}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalcApiLocal", "..\CalcApiLocal\CalcApiLocal\CalcApiLocal.csproj", "{7AB5ABFC-C62D-4341-A495-A5A157A989C5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stock4.TestsW", "Stock4.TestsW\Stock4.TestsW.csproj", "{99983498-7BF9-4226-970F-D9EF24633261}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{FED84361-382D-4C53-81BF-06710B612363}"
@@ -28,14 +24,6 @@ Global
 		{E7DBBDDF-362F-4032-9734-653EAD8D4839}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7DBBDDF-362F-4032-9734-653EAD8D4839}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7DBBDDF-362F-4032-9734-653EAD8D4839}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B6D53810-A6B0-4B13-BFA8-1A547F0A0193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6D53810-A6B0-4B13-BFA8-1A547F0A0193}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B6D53810-A6B0-4B13-BFA8-1A547F0A0193}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B6D53810-A6B0-4B13-BFA8-1A547F0A0193}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7AB5ABFC-C62D-4341-A495-A5A157A989C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7AB5ABFC-C62D-4341-A495-A5A157A989C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7AB5ABFC-C62D-4341-A495-A5A157A989C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7AB5ABFC-C62D-4341-A495-A5A157A989C5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{99983498-7BF9-4226-970F-D9EF24633261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{99983498-7BF9-4226-970F-D9EF24633261}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99983498-7BF9-4226-970F-D9EF24633261}.Release|Any CPU.ActiveCfg = Release|Any CPU
